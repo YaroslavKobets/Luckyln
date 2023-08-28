@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+	@@include('html/static/_head.html',{"title": "Home"})
+
+	<body>
+		<div class="wrapper">
+			@@include('html/blocks/_header.html')
+			<main class="page page-home">
+				@@include('html/page-Home/intro.html',{})
+				@@include('html/page-Home/brands.html',{})
+				@@include('html/page-Home/about-us.html',{})
+				@@include('html/page-Home/steps.html',{})
+				@@include('html/page-Home/advertising.html',{})
+				@@include('html/page-Home/services.html',{})
+				@@include('html/page-Home/vacancies.html',{})
+			</main>
+			@@include('html/blocks/_footer.html')
+			@@include('html/page-Home/popup.html')
+		</div>
+		@@include('html/static/_js.html',{})
+		@@include('html/static/_sprite-icons.html',{})
+	</body>
+
+</html>

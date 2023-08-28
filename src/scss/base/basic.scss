@@ -1,0 +1,84 @@
+body {
+	background-color: $color-white;
+	&.lock {
+		overflow: hidden;
+		touch-action: none;
+	}
+}
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	main {
+		flex: 1 1 auto;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1320px;
+	padding: 0 15px;
+	@include screen-1320 {
+		max-width: 1200px;
+		padding: 0 10px;
+	}
+	@include screen-1200 {
+		max-width: 1024px;
+		padding: 0 16px;
+	}
+	@include screen-1024 {
+		max-width: 768px;
+		padding: 0 14px;
+	}
+	@include screen-768 {
+		max-width: 100%;
+		padding: 0 15px;
+	}
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 600;
+	line-height: 1.62;
+	padding: 12px 24px;
+	border-radius: 30px;
+	min-height: 50px;
+	color: $color-white;
+	background-color: $color-gold;
+	transition: all 0.3s ease-in-out 0s;
+	&--dark {
+		font-size: 30px;
+		padding: 21px 0;
+		min-height: 90px;
+		box-shadow: 0 0 0 2px inset $color-black;
+		color: $color-black;
+	}
+	&:hover {
+		background-color: $color-gold-hover;
+		box-shadow: none;
+		color: $color-white;
+	}
+	&:active,
+	&:focus {
+		box-shadow: none;
+		background-color: $color-gold-click;
+		color: $color-white;
+	}
+}
+
+.section-title {
+	font-weight: 500;
+	font-size: 50px;
+	line-height: 1.4;
+	color: $color-black;
+	@include screen-768 {
+		font-size: 40px;
+	}
+	@include screen-480 {
+		font-size: 30px;
+	}
+}

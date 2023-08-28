@@ -1,0 +1,87 @@
+.services {
+	padding: 100px 0;
+	@include screen-1024 {
+		padding: 50px 0;
+	}
+	@include screen-480 {
+		padding: 30px 0;
+	}
+	.section-title {
+		text-align: center;
+		margin-bottom: 50px;
+		@include screen-1024 {
+			margin-bottom: 25px;
+		}
+	}
+	&__body {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-evenly;
+		margin: 0 -15px;
+		@include screen-1320 {
+			flex-wrap: wrap;
+		}
+		@include screen-1024 {
+			margin: 0;
+		}
+	}
+
+	&__item {
+		width: 33.333%;
+		margin: 0 15px;
+		@include screen-1320 {
+			width: calc(50% - 30px);
+			margin-bottom: 30px;
+		}
+		@include screen-1024 {
+			width: 100%;
+			margin: 0;
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	&__item-header {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+		min-height: 76px;
+		@include screen-1320 {
+			justify-content: center;
+		}
+		@include screen-1024 {
+			justify-content: flex-start;
+			min-height: auto;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__item-arrow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: #f2f2f2;
+		margin-right: 20px;
+		svg {
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	&__item-title {
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 1.36;
+		@include screen-480 {
+			font-size: 22px;
+		}
+		@include screen-374 {
+			font-size: 20px;
+		}
+	}
+}

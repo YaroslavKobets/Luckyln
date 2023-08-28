@@ -1,0 +1,250 @@
+.advertising {
+	padding-top: 88px;
+
+	.section-title {
+		text-align: center;
+		max-width: 1045px;
+		margin: 0 auto;
+	}
+
+	&__body {
+		padding: 100px 0;
+		position: relative;
+		@include screen-1024 {
+			padding: 50px 0;
+		}
+		@include screen-480 {
+			padding: 30px 0;
+		}
+		&::before {
+			content: '';
+			width: 1600px;
+			height: 100%;
+			background: linear-gradient(180deg, #f2f2f2 0%, rgba(242, 242, 242, 0) 100%);
+			backdrop-filter: blur(5px);
+			position: absolute;
+			top: 0;
+			left: -155px;
+			z-index: -2;
+		}
+	}
+	&__bg {
+		position: absolute;
+		filter: blur(3px);
+		z-index: -3;
+		&--1 {
+			top: -88px;
+			left: -25px;
+			@include screen-768 {
+				top: 140px;
+			}
+		}
+		&--2 {
+			top: 578px;
+			left: -265px;
+			@include screen-1320 {
+				left: auto;
+				right: 88px;
+				top: -130px;
+			}
+			@include screen-768 {
+				top: 400px;
+				right: -40px;
+			}
+		}
+		&--3 {
+			bottom: 143px;
+			right: -236px;
+			@include screen-1320 {
+				right: auto;
+				bottom: 88px;
+				left: -20px;
+			}
+		}
+	}
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		@include screen-768 {
+			flex-direction: column;
+		}
+	}
+
+	&__list {
+		width: 100%;
+		max-width: 740px;
+		padding-top: 100px;
+		@include screen-1024 {
+			padding-top: 40px;
+		}
+		@include screen-768 {
+			padding-top: 20px;
+		}
+	}
+
+	&__list-item {
+		display: grid;
+		grid-template-columns: 80px 1fr;
+		column-gap: 30px;
+		row-gap: 20px;
+		svg {
+			width: 80px;
+			height: 80px;
+			grid-row: 2 span;
+		}
+		&:not(:last-child) {
+			margin-bottom: 50px;
+			@include screen-768 {
+				margin-bottom: 20px;
+			}
+		}
+		@include screen-1024 {
+			grid-template-columns: 40px 1fr;
+			gap: 0 15px;
+			svg {
+				margin-top: 10px;
+				width: 40px;
+				height: 40px;
+			}
+		}
+		@include screen-374 {
+			grid-template-columns: auto;
+			svg {
+				display: none;
+			}
+		}
+	}
+
+	&__list-item-title {
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 1.36;
+		@include screen-1024 {
+			font-size: 23px;
+		}
+		@include screen-374 {
+			font-size: 20px;
+		}
+	}
+
+	&__list-item-descr {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 1.67;
+		@include screen-1024 {
+			font-size: 17px;
+		}
+		@include screen-374 {
+			font-size: 16px;
+		}
+	}
+
+	&__socials {
+		width: 100%;
+		max-width: 450px;
+		display: grid;
+		grid-template-columns: auto;
+		margin-top: 55px;
+		@include screen-1200 {
+			max-width: 345px;
+		}
+		@include screen-1024 {
+			max-width: 220px;
+			margin: 40px 0 0 10px;
+		}
+		@include screen-768 {
+			max-width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 30px;
+			margin: 20px 0 0 0;
+		}
+		@include screen-374 {
+			gap: 20px;
+		}
+	}
+
+	&__socials-item {
+		width: 180px;
+		height: 180px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		border-radius: 50%;
+		background: $color-white;
+		justify-self: end;
+		margin-top: -55px;
+		transition: all 0.3s ease-in-out;
+		svg {
+			fill: $color-gold;
+			transition: all 0.3s ease-in-out;
+		}
+		@include screen-1024 {
+			width: 120px;
+			height: 120px;
+			padding: 15px;
+			margin-top: -40px;
+		}
+		@include screen-768 {
+			margin: 0;
+		}
+		&:nth-child(2n) {
+			justify-self: start;
+		}
+		&::after {
+			content: '';
+			background: linear-gradient(206.35deg, #d9b033 34.09%, rgba(255, 255, 255, 0) 68.52%),
+				linear-gradient(0deg, #ffffff, #ffffff);
+			position: absolute;
+			top: -3px;
+			right: -3px;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			z-index: -1;
+			transition: all 0.3s ease-in-out;
+		}
+		&:hover {
+			background-color: rgba($color: #fff, $alpha: 0);
+			svg {
+				fill: $color-white;
+			}
+			&::after {
+				top: 0;
+				right: 0;
+			}
+			&:nth-child(1) {
+				&::after {
+					background: linear-gradient(215.86deg, #121315 11.11%, #707173 86.22%);
+				}
+			}
+			&:nth-child(2) {
+				&::after {
+					background: linear-gradient(215.86deg, #006cb5 11.11%, #97daf7 86.22%);
+				}
+			}
+			&:nth-child(3) {
+				&::after {
+					background: linear-gradient(215.86deg, #275a8a 11.11%, #6fcafd 86.22%);
+				}
+			}
+			&:nth-child(4) {
+				&::after {
+					background: linear-gradient(215.86deg, #0743bb 11.11%, #6fb1fd 86.22%);
+				}
+			}
+			&:nth-child(5) {
+				&::after {
+					background: linear-gradient(215.86deg, #dd8d02 11.11%, #ffca05 86.22%);
+				}
+			}
+			&:nth-child(6) {
+				&::after {
+					background: linear-gradient(215.86deg, #6517a9 11.11%, #e1493e 86.22%);
+				}
+			}
+		}
+	}
+}
